@@ -3,7 +3,7 @@ import { colors } from "@theme/colors";
 import { loadingStateStyles } from "./LoadingState.styles";
 import { useLoadingState } from "./useLoadingState";
 
-interface LoadingStateProps {
+export interface LoadingStateProps {
   message?: string;
 }
 
