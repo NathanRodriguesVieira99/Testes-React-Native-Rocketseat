@@ -3,14 +3,19 @@ import { Text, View } from "react-native";
 import { emptyStateStyles } from "./EmptyState.styles";
 import { useEmptyState } from "./useEmptyState";
 
-interface EmptyStateProps {
+export interface EmptyStateProps {
   icon: ReactNode;
   title: string;
   description?: string;
   action?: ReactNode;
 }
 
-export function EmptyState({ icon, title, description, action }: EmptyStateProps) {
+export function EmptyState({
+  icon,
+  title,
+  description,
+  action,
+}: EmptyStateProps) {
   const { titleId } = useEmptyState();
 
   return (
@@ -26,7 +31,11 @@ export function EmptyState({ icon, title, description, action }: EmptyStateProps
       {description ? (
         <Text style={emptyStateStyles.description}>{description}</Text>
       ) : null}
-      {action ? <View style={emptyStateStyles.actionWrap}>{action}</View> : null}
+      {action ? (
+        <View testID="EmptyStateAction" style={emptyStateStyles.actionWrap}>
+          {action}
+        </View>
+      ) : null}
     </View>
   );
 }
