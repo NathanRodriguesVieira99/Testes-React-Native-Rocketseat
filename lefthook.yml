@@ -12,4 +12,4 @@ pre-push:
       run: pnpm lint
     test:
       glob: "*.{ts,tsx,js,jsx}"
-      run: pnpm test
+      run: pnpm test:cov
